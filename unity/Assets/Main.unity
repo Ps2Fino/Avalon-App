@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 62387211}
   - component: {fileID: 62387210}
   m_Layer: 5
-  m_Name: Move to Knights
+  m_Name: Move to Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 256645905}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 2047985126}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -1064,6 +1064,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 256645904}
+  - component: {fileID: 256645905}
   m_Layer: 0
   m_Name: Portrait
   m_TagString: Untagged
@@ -1087,6 +1088,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &256645905
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256645903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2ffddb6a27bdef4a86a9260cd960157, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &258962741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 396, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324549396
@@ -2608,7 +2627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 40, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 396, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654631125
@@ -3950,7 +3969,7 @@ GameObject:
   - component: {fileID: 1317021166}
   - component: {fileID: 1317021165}
   m_Layer: 5
-  m_Name: Move to Knights
+  m_Name: Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4014,7 +4033,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 256645905}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -4255,7 +4274,6 @@ GameObject:
   - component: {fileID: 1420741024}
   - component: {fileID: 1420741023}
   - component: {fileID: 1420741027}
-  - component: {fileID: 1420741028}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4337,24 +4355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e07c6c1628096648b796ab1a7c55c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1420741028
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1420741022}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d2ffddb6a27bdef4a86a9260cd960157, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1428289983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,7 +4780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 256645905}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -5840,7 +5840,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 2047985126}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -6073,7 +6073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1420741028}
+      - m_Target: {fileID: 2047985126}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -6267,6 +6267,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2047985125}
+  - component: {fileID: 2047985126}
   m_Layer: 0
   m_Name: Landscape
   m_TagString: Untagged
@@ -6290,6 +6291,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2047985126
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047985124}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c7b3753cabbc3546b3ff8295f4f047d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2060909408
 GameObject:
   m_ObjectHideFlags: 0
