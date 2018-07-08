@@ -2,19 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
+/**
+ * This script implements the callback from the UI.
+ * Its main role is to populate the set with
+ * the charcaters for the game
+ * 
+ * @author Daniel J. Finnegan
+ * @date July 2018
+ */
 public class CharacterSelector : MonoBehaviour {
 
+    // So we can connect it in the editor
+    [System.Serializable]
+    public class CharacterSelectedEvent : UnityEvent<Button, bool>
+    {}
+
+    [System.Serializable]
+    public class CalloutGeneratedEvent : UnityEvent<Text, string>
+    {}
+
     #region Public variables
-    public readonly string MORDRED = "Mordred";
-    public readonly string MORGANA = "Morgana";
-    public readonly string ASSASSIN = "Assassin";
-    public readonly string OBERON = "Oberon";
+    public readonly string MORDRED = "pMordred";
+    public readonly string MORGANA = "pMorgana";
+    public readonly string ASSASSIN = "pAssassin";
+    public readonly string OBERON = "pOberon";
+
+    public readonly string MERLIN = "pMerlin";
+    public readonly string PERCIVAL = "pPercival";
+
+    public CharacterSelectedEvent OnCharacterSelected;
+    public CalloutGeneratedEvent OnCalloutGenerated;
+    #endregion
+
+    #region Private variables
+    private HashSet<string> characters;
     #endregion
 
     // Use this for initialization
     void Start () {
-		
+#if ANDROID
+        Screen.fullscreen = false;
+#endif
+        characters = new HashSet<string>();
 	}
 	
 	// Update is called once per frame
@@ -28,21 +59,130 @@ public class CharacterSelector : MonoBehaviour {
      */
     public void CharacterSelected (Button button)
     {
-        if (button.name == MORDRED)
+        // Check the name of the button and 
+        // update the set as well as the button
+        if (characters.Contains(button.name))
         {
-            Debug.Log("Mordred selected");
+            characters.Remove(button.name);
+            OnCharacterSelected.Invoke(button, false);
         }
-        else if (button.name == MORGANA)
+        else
         {
-            Debug.Log("Morgana selected");
+            characters.Add(button.name);
+            OnCharacterSelected.Invoke(button, true);
         }
-        else if (button.name == ASSASSIN)
+    }
+
+    /**
+     * This is the primary piece of logic
+     * for the whole application.
+     * It analyses the set of characters 
+     * and generates an appropriate call out
+     */
+    public void GenerateCallout (Text calloutText)
+    {
+        string callout = "";
+
+        // Create the preamble
+        callout = "Ok: everybody close your eyes and put your fist into the table. ";
+        callout += "Now; bad guys, that is ";
+
+        // Go through the set and create the callout
+
+        // First we look for bad guys
+        int numBadGuys = 0;
+        if (characters.Contains(MORDRED))
         {
-            Debug.Log("Assassin selected");
+            callout += "MORDRED ";
+            numBadGuys++;
         }
-        else if (button.name == OBERON)
+        if (characters.Contains(MORGANA))
         {
-            Debug.Log("Oberon selected");
+            callout += "MORGANA ";
+            numBadGuys++;
         }
+
+        if (characters.Contains(ASSASSIN))
+        {
+            numBadGuys++;
+            if (characters.Contains(OBERON))
+            {
+                numBadGuys++;
+                callout += "and ASSASSIN, but not OBERON ";
+            }
+            else
+            {
+                callout += "and ASSASSIN ";
+            }
+        }
+
+        callout += "raise your thumbs and open your eyes! ";
+        callout += "There should only be " + numBadGuys + " of you with your eyes open ";
+        callout += " and " + numBadGuys + " thumbs up. \n\n";
+
+        callout += "Thats enough time. ";
+        callout += "Everyone close your eyes and lower your thumbs. ";
+
+        // Now check for good guys
+        callout += "";
+        numBadGuys = 0;
+        if (characters.Contains(MERLIN))
+        {
+            if (characters.Contains(MORGANA))
+            {
+                numBadGuys++;
+                callout += "Now, MORGANA ";
+                if (characters.Contains(ASSASSIN))
+                {
+                    numBadGuys++;
+                    if (characters.Contains(OBERON))
+                    {
+                        numBadGuys++;
+                        callout += ", ASSASSIN, and OBERON only; ";
+                    }
+                    callout += "and ASSASSIN only; ";
+                }
+            }
+            else if (characters.Contains(ASSASSIN))
+            {
+                numBadGuys++;
+                callout += "Now, ASSASSIN ";
+                if (characters.Contains(OBERON))
+                {
+                    numBadGuys++;
+                    callout += "and OBERON only; ";
+                }
+            }
+            else if (characters.Contains(OBERON))
+            {
+                numBadGuys++;
+                callout += "Now OBERON only; ";
+            }
+            
+            callout += "raise your thumb but keep your eyes closed. ";
+            callout += "MERLIN; open your eyes. ";
+            callout += "You should see " + numBadGuys + 
+                " thumbs up but nobody else should have their eyes open.\n\n";
+
+            callout += "Thats enough time. ";
+            callout += "Everyone: close your eyes and lower your thumbs. ";
+        }
+
+        if (characters.Contains(PERCIVAL))
+        {
+            callout += "Now; MORGANA and MERLIN only; ";
+            callout += "Keep your eyes closed, but raise your thumbs. ";
+            callout += "PERCIVAL; open your eyes! ";
+            callout += "You should see 2 thumbs up, one of which belongs to MERLIN and the other belongs to MORGANA. ";
+            callout += "Nobody else should have their eyes open.\n\n";
+
+            callout += "Thats enough time. ";
+        }
+
+        callout += "Everyone: keeping your eyes closed, retract your fists from the table. ";
+        callout += "Now everyone; open your eyes!";
+
+        // Trigger the UI updater script
+        OnCalloutGenerated.Invoke(calloutText, callout);
     }
 }
