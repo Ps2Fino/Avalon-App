@@ -5317,6 +5317,8 @@ GameObject:
   - component: {fileID: 1831694560}
   - component: {fileID: 1831694561}
   - component: {fileID: 1831694562}
+  - component: {fileID: 1831694564}
+  - component: {fileID: 1831694565}
   m_Layer: 0
   m_Name: AppManager
   m_TagString: Untagged
@@ -5378,6 +5380,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1831694564}
+        m_MethodName: GenerateSpeech
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CharacterSelector+CalloutGeneratedEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1831694562
@@ -5389,6 +5402,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58ef93ebeba0e5b448269d07295365cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1831694564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831694559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821638878b3733742ae26b67e530de45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tts: {fileID: 1831694565}
+--- !u!114 &1831694565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831694559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda721609383d6d4dac972d09aa900ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1836854567
