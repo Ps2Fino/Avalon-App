@@ -3975,6 +3975,83 @@ MonoBehaviour:
           m_StringArgument: Reset
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1831694565}
+        m_MethodName: StopSpeaking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1865267492}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 848069672}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 441713982}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 980162148}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1393372401}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 1831694562}
+        m_MethodName: ResetUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1428289985}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1317021166
@@ -5415,7 +5492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821638878b3733742ae26b67e530de45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tts: {fileID: 1831694565}
 --- !u!114 &1831694565
 MonoBehaviour:
   m_ObjectHideFlags: 0
