@@ -185,4 +185,9 @@ public class CharacterSelector : MonoBehaviour {
         // Trigger the UI updater script
         OnCalloutGenerated.Invoke(calloutText, callout);
     }
+
+    public void ResetCharacterSet()
+    {
+        characters = new HashSet<string>();
+    }
 }

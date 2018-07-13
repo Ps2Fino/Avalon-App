@@ -26,4 +26,9 @@ public class Speaker : MonoBehaviour {
             tts.ShowToast(msg);
         });
     }
+
+    public void StopSpeech()
+    {
+        tts.StopSpeaking();
+    }
 }

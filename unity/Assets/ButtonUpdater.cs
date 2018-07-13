@@ -40,4 +40,10 @@ public class ButtonUpdater : MonoBehaviour {
     {
         calloutTextField.text = textToInsert;
     }
+
+    public void ResetUI(Button button)
+    {
+        // Turn the button off
+        UpdateButton(button, false);
+    }
 }
