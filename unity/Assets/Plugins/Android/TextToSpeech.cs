@@ -125,7 +125,7 @@ public class TextToSpeech :MonoBehaviour
                 activityContext = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
             }
 
-            using (AndroidJavaClass pluginClass = new AndroidJavaClass("ir.hoseinporazar.androidtts.TTS"))
+            using (AndroidJavaClass pluginClass = new AndroidJavaClass("TTS"))
             {
                 if (pluginClass != null)
                 {
