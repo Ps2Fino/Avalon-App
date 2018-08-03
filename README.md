@@ -13,8 +13,6 @@ This project is [Updater](https://github.com/Ps2Fino/Updater) compatible.
 
 # Dependencies
 As of v03-alpha, the android version uses [Hosein Porazar's Andoid TTS Plugin](https://github.com/HoseinPorazar/Android-Native-TTS-plugin-for-Unity-3d/tree/Modified) for text-to-speech conversion of the callout.
-I will implement a functionality to stop the speech when I get a chance, but for now this is a working prototype.
-I had to unzip the aar and add just the compiled java classes (luckily there was no jni funny business to tackle).
 I've placed a [packaged binary](https://github.com/Ps2Fino/Avalon-App/releases/tag/v0.2.1-android-alpha) in the releases.
 
 @author Daniel J. Finnegan  
