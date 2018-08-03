@@ -85,38 +85,40 @@ public class CharacterSelector : MonoBehaviour {
 
         // Create the preamble
         callout = "Ok: everybody close your eyes and put your fist into the table. ";
-        callout += "Now; bad guys, that is ";
+        callout += "Bad guys: that is ";
 
         // Go through the set and create the callout
 
         // First we look for bad guys
         int numBadGuys = 0;
-        if (characters.Contains(MORDRED))
+        if (characters.Contains(MORDRED) && characters.Contains(MORGANA))
         {
-            callout += "MORDRED ";
+            callout += "MORDRED, ";
             numBadGuys++;
         }
         if (characters.Contains(MORGANA))
         {
-            callout += "MORGANA ";
+            callout += "MORGANA, ";
             numBadGuys++;
         }
 
-        if (characters.Contains(ASSASSIN))
+        if (characters.Contains(ASSASSIN) && characters.Contains(OBERON))
+        {
+            numBadGuys += 2;
+            callout += "and ASSASSIN, but not OBERON: ";
+        }
+        else if (characters.Contains(ASSASSIN))
         {
             numBadGuys++;
-            if (characters.Contains(OBERON))
-            {
-                numBadGuys++;
-                callout += "and ASSASSIN, but not OBERON ";
-            }
-            else
-            {
-                callout += "and ASSASSIN ";
-            }
+            callout += "and ASSASSIN: ";
+        }
+        else if (characters.Contains(OBERON))
+        {
+            numBadGuys++;
+            callout += "but not OBERON: ";
         }
 
-        callout += "raise your thumbs and open your eyes! ";
+        callout += "raise your thumbs and open your eyes. ";
         callout += "There should only be " + numBadGuys + " of you with your eyes open ";
         callout += " and " + numBadGuys + " thumbs up. \n\n";
 
@@ -124,6 +126,7 @@ public class CharacterSelector : MonoBehaviour {
         callout += "Everyone close your eyes and lower your thumbs. ";
 
         // Now check for good guys
+        
         callout += "";
         numBadGuys = 0;
         if (characters.Contains(MERLIN))
@@ -131,16 +134,16 @@ public class CharacterSelector : MonoBehaviour {
             if (characters.Contains(MORGANA))
             {
                 numBadGuys++;
-                callout += "Now, MORGANA ";
+                callout += "Now, MORGANA, ";
                 if (characters.Contains(ASSASSIN))
                 {
                     numBadGuys++;
                     if (characters.Contains(OBERON))
                     {
                         numBadGuys++;
-                        callout += ", ASSASSIN, and OBERON only; ";
+                        callout += "ASSASSIN, and OBERON only: ";
                     }
-                    callout += "and ASSASSIN only; ";
+                    callout += "and ASSASSIN only: ";
                 }
             }
             else if (characters.Contains(ASSASSIN))
@@ -150,7 +153,11 @@ public class CharacterSelector : MonoBehaviour {
                 if (characters.Contains(OBERON))
                 {
                     numBadGuys++;
-                    callout += "and OBERON only; ";
+                    callout += "and OBERON only: ";
+                }
+                else
+                {
+                    callout += "only: "
                 }
             }
             else if (characters.Contains(OBERON))
@@ -160,7 +167,7 @@ public class CharacterSelector : MonoBehaviour {
             }
             
             callout += "raise your thumb but keep your eyes closed. ";
-            callout += "MERLIN; open your eyes. ";
+            callout += "MERLIN: open your eyes. ";
             callout += "You should see " + numBadGuys + 
                 " thumbs up but nobody else should have their eyes open.\n\n";
 
@@ -168,19 +175,48 @@ public class CharacterSelector : MonoBehaviour {
             callout += "Everyone: close your eyes and lower your thumbs. ";
         }
 
+        numBadGuys = 0;
         if (characters.Contains(PERCIVAL))
         {
-            callout += "Now; MORGANA and MERLIN only; ";
+            if (characters.Contains(MERLIN) && characters.Contains(MORGANA))
+            {
+                numBadGuys = 2;
+                callout += "Now; MORGANA and MERLIN only: ";
+            }
+            else if (characters.Contains(MERLIN))
+            {
+                numBadGuys = 1;
+                callout += "Now; MERLIN only: ";
+            }
+            else if (characters.Contains(MORGANA))
+            {
+                numBadGuys = 1;
+                callout += "Now; MORGANA only: ";
+            }
+            
             callout += "Keep your eyes closed, but raise your thumbs. ";
-            callout += "PERCIVAL; open your eyes! ";
-            callout += "You should see 2 thumbs up, one of which belongs to MERLIN and the other belongs to MORGANA. ";
-            callout += "Nobody else should have their eyes open.\n\n";
+            callout += "PERCIVAL: open your eyes! ";
+            callout += "You should see " + numBadGuys + " thumbs up";
 
+            if (characters.Contains(MERLIN) && characters.Contains(MORGANA))
+            {
+                ", one of which belongs to MERLIN. The other belongs to MORGANA. ";
+            }
+            else if (characters.Contains(MERLIN))
+            {
+                ": it belongs to MERLIN. ";
+            }
+            else if (characters.Contains(MORGANA))
+            {
+                ": it belongs to MORGANA. ";
+            }
+
+            callout += "Nobody else should have their eyes open.\n\n";
             callout += "Thats enough time. ";
         }
 
         callout += "Everyone: keeping your eyes closed, retract your fists from the table. ";
-        callout += "Now everyone; open your eyes!";
+        callout += "Now open your eyes.";
 
         // Trigger the UI updater script
         OnCalloutGenerated.Invoke(calloutText, callout);
