@@ -9,7 +9,7 @@ This application automates the callout.
 Players can choose which characters are active in the game, and then the app will generate a sound clip of the callout and then play it.
 For the moment, the app uses a TTS plugin for the speech output.
 
-This project is [Updater](https://github.com/Ps2Fino/Updater) compatible.
+This project is NOT [Updater](https://github.com/Ps2Fino/Updater) compatible as Unity doesn't have a clean method for compiling android applications using the CL interface.
 
 # Dependencies
 As of v03-alpha, the android version uses [Hosein Porazar's Andoid TTS Plugin](https://github.com/HoseinPorazar/Android-Native-TTS-plugin-for-Unity-3d/tree/Modified) for text-to-speech conversion of the callout.
