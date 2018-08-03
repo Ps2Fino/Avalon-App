@@ -126,7 +126,7 @@ public class CharacterSelector : MonoBehaviour {
         callout += "Everyone close your eyes and lower your thumbs. ";
 
         // Now check for good guys
-        
+
         callout += "";
         numBadGuys = 0;
         if (characters.Contains(MERLIN))
@@ -157,7 +157,7 @@ public class CharacterSelector : MonoBehaviour {
                 }
                 else
                 {
-                    callout += "only: "
+                    callout += "only: ";
                 }
             }
             else if (characters.Contains(OBERON))
@@ -200,15 +200,15 @@ public class CharacterSelector : MonoBehaviour {
 
             if (characters.Contains(MERLIN) && characters.Contains(MORGANA))
             {
-                ", one of which belongs to MERLIN. The other belongs to MORGANA. ";
+                callout += ", one of which belongs to MERLIN. The other belongs to MORGANA. ";
             }
             else if (characters.Contains(MERLIN))
             {
-                ": it belongs to MERLIN. ";
+                callout += ": it belongs to MERLIN. ";
             }
             else if (characters.Contains(MORGANA))
             {
-                ": it belongs to MORGANA. ";
+                callout += ": it belongs to MORGANA. ";
             }
 
             callout += "Nobody else should have their eyes open.\n\n";
