@@ -1,9 +1,9 @@
 # Avalon-App
 
-# Play Store Release
+## Play Store Release
 A later version of this app is available on the [Google Play Store](https://play.google.com/store/apps/details?id=com.Lancophone.AvalonCallout)
 
-# About
+## About
 
 I really like the game [Avalon](https://boardgamegeek.com/boardgame/128882/resistance-avalon).
 I mean, REALLY like it!
@@ -16,7 +16,7 @@ For the moment, the app uses a TTS plugin for the speech output.
 
 This project is NOT [Updater](https://github.com/Ps2Fino/Updater) compatible as Unity doesn't have a clean method for compiling android applications using the CL interface.
 
-# Dependencies
+## Dependencies
 As of v03-alpha, the android version uses [Hosein Porazar's Andoid TTS Plugin](https://github.com/HoseinPorazar/Android-Native-TTS-plugin-for-Unity-3d/tree/Modified) for text-to-speech conversion of the callout.
 I've placed a [packaged binary](https://github.com/Ps2Fino/Avalon-App/releases/tag/v0.2.1-android-alpha) in the releases.
 
