@@ -1,5 +1,10 @@
 # Avalon-App
 
+# Play Store Release
+A later version of this app is available on the [Google Play Store](https://play.google.com/store/apps/details?id=com.Lancophone.AvalonCallout)
+
+# About
+
 I really like the game [Avalon](https://boardgamegeek.com/boardgame/128882/resistance-avalon).
 I mean, REALLY like it!
 I play it as often as I can.
